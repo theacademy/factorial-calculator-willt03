@@ -35,9 +35,18 @@ public class Factorial {
 
 		//YOUR CODE STARTS HERE
 
-		return -1;
+         if(scanner.hasNextInt()) {
+             int input = scanner.nextInt();
+             if (input > 0  && input <= 10) {
+                 this.num = input;
+                 return input;
+             }
+         }
 
-		//YOUR CODE ENDS HERE
+         this.printStream.print("Invalid entry. Please enter an integer between 1 and 10, inclusive.");
+         return -1;
+
+         //YOUR CODE ENDS HERE
 		 
 			
 	 }
@@ -53,8 +62,9 @@ public class Factorial {
 		 
 		int result = 1;
 		//YOUR CODE STARTS HERE
-
- 
+        for (int i = 1; i <= num; i++) {
+            result = result*i;
+        }
 
 		//YOUR CODE ENDS HERE
 		this.printStream.print("The Factorial is: " + result);		
